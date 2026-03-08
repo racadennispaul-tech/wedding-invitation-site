@@ -668,7 +668,16 @@
           </div>
 
           <div class="rsvp-card">
-            <form id="rsvpForm">
+            <form
+            
+             id="rsvpForm"
+             action="https://formsubmit.co/racadennispaul@gmail.com"
+  method="POST">
+  <input type="hidden" name="_subject" value="New Wedding RSVP Submission" />
+<input type="hidden" name="_captcha" value="false" />
+<input type="hidden" name="_template" value="table" />
+<input type="hidden" name="_next" value="https://your-vercel-site.vercel.app/?rsvp=success" />
+</form>
               <div class="grid-2">
                 <div>
                   <label for="name">Full Name</label>
@@ -761,23 +770,7 @@
       }
 
       updateCountdown();
-      setInterval(updateCountdown, 1000);
-
-      const form = document.getElementById('rsvpForm');
-      const status = document.getElementById('formStatus');
-
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        const formData = new FormData(form);
-        const payload = Object.fromEntries(formData.entries());
-
-        const saved = JSON.parse(localStorage.getItem('wedding-rsvps') || '[]');
-        saved.push({ ...payload, submittedAt: new Date().toISOString() });
-        localStorage.setItem('wedding-rsvps', JSON.stringify(saved));
-
-        status.textContent = 'Thank you! Your RSVP has been saved in this browser preview.';
-        form.reset();
-      });
+      setInterval(updateCountdown, 1000);;
     </script>
   </body>
 </html>
