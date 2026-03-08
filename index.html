@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dennis & Love | Wedding Invitation</title>
+    <meta
+      name="description"
+      content="You're invited to celebrate the wedding of Dennis and Love on April 10, 2027 in Malolos, Bulacan."
+    />
+    <style>
+      :root {
+        --bg: #f7f2ec;
+        --card: rgba(255, 255, 255, 0.78);
+        --text: #2f241d;
+        --muted: #735d50;
+        --accent: #b8845f;
+        --accent-dark: #8f6244;
+        --line: rgba(47, 36, 29, 0.12);
+        --shadow: 0 20px 60px rgba(43, 27, 17, 0.16);
+        --radius: 26px;
+        --max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--text);
+        background: linear-gradient(180deg, #f8f4ef 0%, #f6efe8 100%);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 20;
+        backdrop-filter: blur(14px);
+        background: rgba(247, 242, 236, 0.72);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .topbar-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        font-size: 1rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .nav {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav a {
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        border-radius: 999px;
+        padding: 14px 22px;
+        font-size: 0.95rem;
+        font-family: inherit;
+        transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: var(--accent-dark);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid var(--line);
+        color: var(--text);
+      }
+
+      .hero {
+        min-height: 100vh;
+        position: relative;
+        padding: 110px 20px 50px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(39, 24, 15, 0.28), rgba(39, 24, 15, 0.42)),
+          url('./624587221_26211660441764750_4425633267189313210_n.jpg');
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.04);
+      }
+
+      .hero-card {
+        position: relative;
+        z-index: 1;
+        width: min(900px, 100%);
+        padding: 42px 28px;
+        border-radius: 34px;
+        background: rgba(255, 250, 246, 0.2);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        text-align: center;
+        color: #fff7f1;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+      }
+
+      .eyebrow {
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        opacity: 0.9;
+      }
+
+      h1 {
+        margin: 18px 0 8px;
+        font-size: clamp(3rem, 8vw, 6.3rem);
+        line-height: 0.95;
+        font-weight: 500;
+      }
+
+      .hero-sub {
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.7;
+        color: rgba(255, 247, 241, 0.92);
+      }
+
+      .hero-meta {
+        margin-top: 26px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .chip {
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        font-size: 0.92rem;
+      }
+
+      .hero-actions {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .section {
+        padding: 86px 20px;
+      }
+
+      .container {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 34px;
+      }
+
+      .section-title .mini {
+        color: var(--accent-dark);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.78rem;
+      }
+
+      .section-title h2 {
+        margin: 12px 0 0;
+        font-size: clamp(2rem, 4.3vw, 3.3rem);
+        font-weight: 500;
+      }
+
+      .story {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 26px;
+        align-items: stretch;
+      }
+
+      .glass,
+      .photo-card,
+      .gallery-card,
+      .schedule-card,
+      .rsvp-card,
+      .countdown-card {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(10px);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .glass {
+        padding: 34px;
+      }
+
+      .glass p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.9;
+        font-size: 1.04rem;
+      }
+
+      .photo-card {
+        overflow: hidden;
+        min-height: 420px;
+      }
+
+      .photo-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .countdown-wrap {
+        margin-top: 26px;
+      }
+
+      .countdown-card {
+        padding: 24px;
+      }
+
+      .countdown-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+
+      .count-item {
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.72);
+        padding: 18px 12px;
+        text-align: center;
+        border: 1px solid var(--line);
+      }
+
+      .count-item strong {
+        display: block;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 500;
+      }
+
+      .count-item span {
+        color: var(--muted);
+        font-size: 0.9rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .details-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .schedule-card {
+        padding: 26px;
+      }
+
+      .schedule-card h3 {
+        margin: 0 0 8px;
+        font-size: 1.45rem;
+        font-weight: 500;
+      }
+
+      .schedule-card p,
+      .schedule-card li {
+        color: var(--muted);
+        line-height: 1.75;
+        font-size: 0.98rem;
+      }
+
+      .schedule-card ul {
+        padding-left: 18px;
+        margin: 14px 0 0;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 18px;
+      }
+
+      .gallery-card {
+        overflow: hidden;
+        min-height: 260px;
+      }
+
+      .gallery-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .span-5 { grid-column: span 5; }
+      .span-7 { grid-column: span 7; }
+      .span-4 { grid-column: span 4; }
+      .span-8 { grid-column: span 8; }
+
+      .rsvp-layout {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 24px;
+      }
+
+      .rsvp-card {
+        padding: 30px;
+      }
+
+      .rsvp-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+
+      .rsvp-card p {
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      form {
+        display: grid;
+        gap: 14px;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      label {
+        display: block;
+        font-size: 0.92rem;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border-radius: 16px;
+        border: 1px solid rgba(47, 36, 29, 0.12);
+        padding: 14px 16px;
+        font: inherit;
+        background: rgba(255, 255, 255, 0.85);
+        color: var(--text);
+        outline: none;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 4px rgba(184, 132, 95, 0.15);
+      }
+
+      textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+
+      .note {
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+
+      .status {
+        margin-top: 12px;
+        font-size: 0.95rem;
+        color: var(--accent-dark);
+      }
+
+      .footer {
+        padding: 40px 20px 60px;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      @media (max-width: 980px) {
+        .story,
+        .rsvp-layout,
+        .details-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .span-5,
+        .span-7,
+        .span-4,
+        .span-8 {
+          grid-column: span 1;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .topbar-inner {
+          justify-content: center;
+        }
+
+        .nav {
+          display: none;
+        }
+
+        .hero-card {
+          padding: 34px 20px;
+        }
+
+        .countdown-grid,
+        .grid-2 {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .countdown-grid,
+        .grid-2,
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .section {
+          padding: 70px 16px;
+        }
+
+        .glass,
+        .schedule-card,
+        .rsvp-card,
+        .countdown-card {
+          padding: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="#home" class="brand">Dennis & Love</a>
+        <nav class="nav">
+          <a href="#story">Our Story</a>
+          <a href="#details">Details</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#rsvp">RSVP</a>
+        </nav>
+        <a class="btn btn-primary" href="#rsvp">RSVP Now</a>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-card">
+        <div class="eyebrow">Wedding Invitation</div>
+        <h1>Dennis<br />& Love</h1>
+        <p class="hero-sub">
+          With joyful hearts, we invite you to celebrate our wedding day and
+          witness the beginning of our forever.
+        </p>
+        <div class="hero-meta">
+          <div class="chip">April 10, 2027</div>
+          <div class="chip">Malolos, Bulacan</div>
+          <div class="chip">Save the Date</div>
+        </div>
+        <div class="hero-actions">
+          <a href="#rsvp" class="btn btn-primary">Confirm Attendance</a>
+          <a href="#gallery" class="btn btn-secondary">View Our Photos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="story">
+      <div class="container">
+        <div class="section-title">
+          <div class="mini">Our Story</div>
+          <h2>A love written by grace, laughter, and adventure</h2>
+        </div>
+
+        <div class="story">
+          <div>
+            <div class="glass">
+              <p>
+                From quiet conversations to unforgettable travels, every moment
+                brought us closer to the life we now dream of building together.
+                We have shared laughter under open skies, peaceful sunsets by the
+                sea, and simple days that turned into cherished memories. On
+                April 10, 2027, we would be honored to have you with us as we say
+                our vows and begin our next chapter as husband and wife.
+              </p>
+            </div>
+
+            <div class="countdown-wrap">
+              <div class="countdown-card">
+                <div class="section-title" style="margin-bottom: 18px; text-align: left;">
+                  <div class="mini">Countdown</div>
+                  <h2 style="font-size: 2rem; margin-top: 8px;">Until we say “I do”</h2>
+                </div>
+                <div class="countdown-grid" id="countdown">
+                  <div class="count-item"><strong>0</strong><span>Days</span></div>
+                  <div class="count-item"><strong>0</strong><span>Hours</span></div>
+                  <div class="count-item"><strong>0</strong><span>Minutes</span></div>
+                  <div class="count-item"><strong>0</strong><span>Seconds</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img src="./622373414_26181516008112527_5420389158853601364_n.jpg" alt="Couple kayaking together" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="details">
+      <div class="container">
+        <div class="section-title">
+          <div class="mini">Event Details</div>
+          <h2>Join us in Malolos, Bulacan</h2>
+        </div>
+
+        <div class="details-grid">
+          <div class="schedule-card">
+            <h3>Date</h3>
+            <p>Saturday, April 10, 2027</p>
+            <ul>
+              <li>Ceremony begins at 3:00 PM</li>
+              <li>Please arrive at least 30 minutes early</li>
+              <li>Reception to follow after the ceremony</li>
+            </ul>
+          </div>
+
+          <div class="schedule-card">
+            <h3>Venue</h3>
+            <p>Malolos, Bulacan</p>
+            <ul>
+              <li>Full venue name and exact address can be added here</li>
+              <li>Perfect for directions, parking, and dress code notes</li>
+              <li>You may also embed a live map link later</li>
+            </ul>
+          </div>
+
+          <div class="schedule-card">
+            <h3>Reminder</h3>
+            <p>
+              Your presence means the world to us. Kindly send your RSVP on or
+              before February 28, 2027, so we can celebrate with you smoothly.
+            </p>
+            <ul>
+              <li>Dress code: Formal / Garden Elegance</li>
+              <li>Unplugged ceremony encouraged</li>
+              <li>Please let us know your meal preference below</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-title">
+          <div class="mini">Gallery</div>
+          <h2>Moments we will treasure forever</h2>
+        </div>
+
+        <div class="gallery">
+          <div class="gallery-card span-5">
+            <img src="./622109739_26181514844779310_5755919570959147931_n.jpg" alt="Couple in kayak on the water" />
+          </div>
+          <div class="gallery-card span-7">
+            <img src="./622204358_26181515361445925_592422462949824375_n.jpg" alt="Couple sitting on steps with peacock" />
+          </div>
+          <div class="gallery-card span-4">
+            <img src="./622226987_26181516508112477_6052007770999589965_n.jpg" alt="Couple in pink kayak sharing a kiss" />
+          </div>
+          <div class="gallery-card span-4">
+            <img src="./624587221_26211660441764750_4425633267189313210_n.jpg" alt="Couple candid moment together" />
+          </div>
+          <div class="gallery-card span-4">
+            <img src="./360_F_266413415_ZZYdWKkpZsudiCmOefpuvDoLmMJD5B4U.jpg" alt="Church in Bulacan" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rsvp">
+      <div class="container">
+        <div class="section-title">
+          <div class="mini">RSVP</div>
+          <h2>Please let us know if you can celebrate with us</h2>
+        </div>
+
+        <div class="rsvp-layout">
+          <div class="rsvp-card">
+            <h3>We can’t wait to celebrate with you</h3>
+            <p>
+              Fill out the RSVP form to confirm your attendance. This demo saves
+              responses inside the browser so you can preview the experience
+              immediately on Vercel with no backend required.
+            </p>
+            <p>
+              To collect real guest responses, connect this form to a service
+              like Formspree, Basin, or a Vercel Serverless Function later.
+            </p>
+            <p class="note">
+              Tip: edit the couple name, exact venue, map link, and RSVP deadline
+              directly in this file before deployment.
+            </p>
+          </div>
+
+          <div class="rsvp-card">
+            <form id="rsvpForm">
+              <div class="grid-2">
+                <div>
+                  <label for="name">Full Name</label>
+                  <input id="name" name="name" type="text" placeholder="Enter your full name" required />
+                </div>
+                <div>
+                  <label for="email">Email Address</label>
+                  <input id="email" name="email" type="email" placeholder="Enter your email" required />
+                </div>
+              </div>
+
+              <div class="grid-2">
+                <div>
+                  <label for="attendance">Attendance</label>
+                  <select id="attendance" name="attendance" required>
+                    <option value="">Select one</option>
+                    <option value="Accepts with joy">Accepts with joy</option>
+                    <option value="Regretfully declines">Regretfully declines</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="guests">Number of Guests</label>
+                  <select id="guests" name="guests" required>
+                    <option value="">Select one</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="meal">Meal Preference</label>
+                <select id="meal" name="meal">
+                  <option value="">Select a preference</option>
+                  <option>Chicken</option>
+                  <option>Beef</option>
+                  <option>Fish</option>
+                  <option>Vegetarian</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message">Message for the Couple</label>
+                <textarea id="message" name="message" placeholder="Write your message here"></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Submit RSVP</button>
+              <div class="status" id="formStatus"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Made with love for our wedding day • April 10, 2027 • Malolos, Bulacan</p>
+    </footer>
+
+    <script>
+      const countdownEl = document.getElementById('countdown');
+      const targetDate = new Date('April 10, 2027 15:00:00').getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance <= 0) {
+          countdownEl.innerHTML = `
+            <div class="count-item"><strong>0</strong><span>Days</span></div>
+            <div class="count-item"><strong>0</strong><span>Hours</span></div>
+            <div class="count-item"><strong>0</strong><span>Minutes</span></div>
+            <div class="count-item"><strong>0</strong><span>Seconds</span></div>
+          `;
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownEl.innerHTML = `
+          <div class="count-item"><strong>${days}</strong><span>Days</span></div>
+          <div class="count-item"><strong>${hours}</strong><span>Hours</span></div>
+          <div class="count-item"><strong>${minutes}</strong><span>Minutes</span></div>
+          <div class="count-item"><strong>${seconds}</strong><span>Seconds</span></div>
+        `;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      const form = document.getElementById('rsvpForm');
+      const status = document.getElementById('formStatus');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        const saved = JSON.parse(localStorage.getItem('wedding-rsvps') || '[]');
+        saved.push({ ...payload, submittedAt: new Date().toISOString() });
+        localStorage.setItem('wedding-rsvps', JSON.stringify(saved));
+
+        status.textContent = 'Thank you! Your RSVP has been saved in this browser preview.';
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
